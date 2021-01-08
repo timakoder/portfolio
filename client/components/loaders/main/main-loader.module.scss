@@ -1,0 +1,32 @@
+@import '../../../../styles/global_vars.scss';
+@import '../../../../styles/mixins.scss';
+
+.icon {
+  width: 150px;
+  height: 150px;
+  fill: var(--text);
+  transform: translateY(0px);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1,1)    translateY(0); }
+  20%  { transform: scale(1.1,.9) translateY(20px); }
+  40%  { transform: scale(.9,1.2) translateY(-100px); }
+  // 90%  { transform: scale(1.1,.9) translateY(0); }
+}
+
+.root {
+  display: inline-block;
+  position: relative;
+
+  .label {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-family: $logoFamily;
+  }
+}

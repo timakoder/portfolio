@@ -1,0 +1,24 @@
+@import '../../../styles/global_vars.scss';
+
+.root {
+  display: inline-block;
+}
+
+.title {
+  font-family: $logoFamily;
+  letter-spacing: 5px;
+  min-height: 60px;
+  min-width: 330px;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--text);
+}
+
+.cursor {
+  display: inline-block;
+  background: var(--text);
+  width: 15px;
+  height: 26px;
+  margin-left: 5px;
+  vertical-align: -2px;
+}

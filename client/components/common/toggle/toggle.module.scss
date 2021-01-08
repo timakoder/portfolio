@@ -1,0 +1,46 @@
+@import '../../../../styles/mixins.scss';
+
+.toggleContainer {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  border: 2px solid var(--border);
+  border-radius: 1000px;
+  position: relative;
+  cursor: pointer;
+
+  &.enabled {
+    background: var(--high);
+  }
+}
+
+.thumb {
+  width: 27px;
+  height: 27px;
+  top: -3px;
+  border-radius: 100%;
+  background: var(--border);
+  position: absolute;
+  left: -3px;
+  transform: translateX(0px);
+  @include normalTransition(transform);
+
+  &.enabled {
+    transform: translateX(34px);
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  top: 1px;
+  position: absolute;
+
+  &.enabledIcon {
+    left: 3px;
+  }
+
+  &.disabledIcon {
+    right: 3px;
+  }
+}

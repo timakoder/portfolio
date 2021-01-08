@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+@import './global_vars.scss';
+@import './mixins.scss';
+
+:root {
+  --dark: #14080e;
+  --light: #fcfcfc;
+  --high: #e85d75;
+  --text: var(--dark);
+  --bg: var(--light);
+  --border: var(--dark);
+}
+
+[theme="dark"] {
+  --bg: var(--dark);
+  --text: var(--light);
+  --border: var(--light);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $fontFamily;
+  line-height: 1.6;
+  font-size: $textSize;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body[animated="true"] {
+  @include normalTransition(color, background);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--high);
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
