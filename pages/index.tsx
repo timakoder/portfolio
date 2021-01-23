@@ -1,5 +1,9 @@
+import { PageLayout } from '../client/layouts/page';
+
 export default function Home() {
   return (
-      <h1>home</h1>
+      <PageLayout>
+        <h1>home</h1>
+      </PageLayout>
   );
 }

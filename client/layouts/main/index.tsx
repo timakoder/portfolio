@@ -25,6 +25,8 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   const mediaLoaded = useMediaLoaded();
 
   const [showLoader, setShowLoader] = useState(true);
+  
+  const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
     if(mediaLoaded) {
@@ -33,6 +35,16 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
       }, 500);
     }
   }, [mediaLoaded]);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(`Path changed`);
+    if (mediaLoaded) {
+      setContentVisible(false);
+      setTimeout(() => setContentVisible(true), 500);
+    }
+  }, [router.asPath, showLoader]);
 
   return <>
     <Head>
@@ -75,7 +87,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
                 <ThemeToggler/>
               </div>
             </header>
-            <main className={styles.mainContainer}>
+            <main className={cx(styles.mainContainer, contentVisible && styles.visible)}>
               {children}
             </main>
             <footer></footer>
